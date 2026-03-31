@@ -25,143 +25,62 @@
     padding: 48px 24px 80px;
   }
 
-  /* Subtle paper texture via repeating gradient */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
     background-image: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 27px,
-      rgba(0,0,0,0.04) 28px
+      0deg, transparent, transparent 27px, rgba(0,0,0,0.04) 28px
     );
     pointer-events: none;
     z-index: 0;
   }
 
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 760px;
-    margin: 0 auto;
-  }
+  .container { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
 
-  header {
-    border-bottom: 3px double var(--ink);
-    padding-bottom: 20px;
-    margin-bottom: 40px;
-  }
+  header { border-bottom: 3px double var(--ink); padding-bottom: 20px; margin-bottom: 40px; }
 
-  .label {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
+  .label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
 
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 6vw, 58px);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-  }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 6vw, 58px); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
 
-  h1 em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
-  }
+  h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
 
-  .subtitle {
-    margin-top: 12px;
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
+  .subtitle { margin-top: 12px; font-size: 12px; color: var(--muted); line-height: 1.7; }
 
-  .input-section {
-    margin-bottom: 32px;
-  }
+  .input-section { margin-bottom: 32px; }
 
-  .field-label {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    display: block;
-    margin-bottom: 10px;
-  }
+  .field-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 10px; }
 
   textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-top: 1.5px solid var(--ink);
-    border-bottom: 1.5px solid var(--ink);
-    padding: 16px 0;
-    font-family: 'DM Mono', monospace;
-    font-size: 14px;
-    color: var(--ink);
-    resize: none;
-    outline: none;
-    line-height: 1.8;
-    min-height: 140px;
+    width: 100%; background: transparent; border: none;
+    border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink);
+    padding: 16px 0; font-family: 'DM Mono', monospace; font-size: 14px;
+    color: var(--ink); resize: none; outline: none; line-height: 1.8; min-height: 140px;
   }
 
   textarea::placeholder { color: var(--muted); }
 
-  .controls {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
+  .controls { display: flex; align-items: center; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
 
   .btn-validate {
-    background: var(--ink);
-    color: var(--paper);
-    border: none;
-    padding: 12px 28px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.15s, transform 0.1s;
+    background: var(--ink); color: var(--paper); border: none;
+    padding: 12px 28px; font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.15s, transform 0.1s;
   }
-
   .btn-validate:hover { background: var(--accent); }
   .btn-validate:active { transform: scale(0.98); }
   .btn-validate:disabled { background: var(--muted); cursor: not-allowed; }
 
-  .char-count {
-    font-size: 11px;
-    color: var(--muted);
-    margin-left: auto;
-  }
+  .char-count { font-size: 11px; color: var(--muted); margin-left: auto; }
 
-  /* Loading */
-  .loading {
-    display: none;
-    align-items: center;
-    gap: 12px;
-    padding: 32px 0;
-    color: var(--muted);
-    font-size: 12px;
-  }
-
+  .loading { display: none; align-items: center; gap: 12px; padding: 32px 0; color: var(--muted); font-size: 12px; }
   .loading.active { display: flex; }
 
   .dots span {
-    display: inline-block;
-    width: 6px; height: 6px;
-    background: var(--ink);
-    border-radius: 50%;
-    margin-right: 4px;
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--ink); border-radius: 50%; margin-right: 4px;
     animation: bounce 1.2s infinite ease-in-out;
   }
   .dots span:nth-child(2) { animation-delay: 0.2s; }
@@ -172,117 +91,52 @@
     40% { transform: translateY(-6px); opacity: 1; }
   }
 
-  /* Results */
   #results { display: none; }
   #results.visible { display: block; }
 
   .results-header {
-    border-top: 3px double var(--ink);
-    border-bottom: 1px solid var(--rule);
-    padding: 16px 0;
-    margin-bottom: 32px;
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
+    border-top: 3px double var(--ink); border-bottom: 1px solid var(--rule);
+    padding: 16px 0; margin-bottom: 32px; display: flex; align-items: baseline; gap: 16px;
   }
 
-  .results-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-  }
+  .results-header h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; }
 
   .verdict-badge {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border: 1px solid var(--ink);
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 4px 10px; border: 1px solid var(--ink);
   }
-
   .verdict-badge.risky { color: var(--accent); border-color: var(--accent); }
   .verdict-badge.promising { color: #2a7a3b; border-color: #2a7a3b; }
 
-  .section {
-    margin-bottom: 36px;
-    padding-bottom: 36px;
-    border-bottom: 1px solid var(--rule);
-  }
-
+  .section { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--rule); }
   .section:last-child { border-bottom: none; }
 
-  .section-title {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 16px;
-  }
+  .section-title { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
 
-  .section-icon {
-    display: inline-block;
-    margin-right: 8px;
-  }
+  .item { display: flex; gap: 12px; margin-bottom: 14px; font-size: 13px; line-height: 1.7; }
 
-  .item {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 14px;
-    font-size: 13px;
-    line-height: 1.7;
-  }
-
-  .item-marker {
-    flex-shrink: 0;
-    color: var(--accent);
-    font-weight: 500;
-    width: 16px;
-  }
-
+  .item-marker { flex-shrink: 0; color: var(--accent); font-weight: 500; width: 16px; }
   .assumption-item .item-marker { color: #d97706; }
   .question-item .item-marker { color: var(--muted); }
   .wwtbt-item .item-marker { color: #2a7a3b; }
 
   .summary-box {
-    background: var(--highlight);
-    border-left: 3px solid var(--accent);
-    padding: 16px 20px;
-    font-size: 13px;
-    line-height: 1.8;
-    font-style: italic;
+    background: var(--highlight); border-left: 3px solid var(--accent);
+    padding: 16px 20px; font-size: 13px; line-height: 1.8; font-style: italic;
   }
 
   .btn-reset {
-    background: transparent;
-    border: 1px solid var(--muted);
-    color: var(--muted);
-    padding: 8px 20px;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 32px;
-    transition: border-color 0.15s, color 0.15s;
+    background: transparent; border: 1px solid var(--muted); color: var(--muted);
+    padding: 8px 20px; font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
+    margin-top: 32px; transition: border-color 0.15s, color 0.15s;
   }
-
   .btn-reset:hover { border-color: var(--ink); color: var(--ink); }
 
-  .error-box {
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 16px 20px;
-    font-size: 12px;
-    line-height: 1.7;
-    display: none;
-  }
+  .error-box { border: 1px solid var(--accent); color: var(--accent); padding: 16px 20px; font-size: 12px; line-height: 1.7; display: none; margin-bottom: 16px; }
   .error-box.visible { display: block; }
 
-  .api-note {
-    margin-top: 8px;
-    font-size: 11px;
-    color: var(--muted);
-  }
+  .api-note { margin-top: 8px; font-size: 11px; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -306,19 +160,17 @@
     ></textarea>
     <div class="controls">
       <button class="btn-validate" id="validate-btn" onclick="validate()">
-        Validate this idea →
+        Validate this idea &rarr;
       </button>
       <span class="char-count" id="char-count">0 characters</span>
     </div>
-    <p class="api-note">Uses Claude AI · Your idea is sent to Anthropic's API</p>
+    <p class="api-note">Uses Claude AI &middot; Your idea is sent to Anthropic's API</p>
   </div>
 
   <div class="error-box" id="error-box"></div>
 
   <div class="loading" id="loading">
-    <div class="dots">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="dots"><span></span><span></span><span></span></div>
     Stress-testing your idea...
   </div>
 
@@ -327,40 +179,40 @@
       <h2>Analysis</h2>
       <span class="verdict-badge" id="verdict-badge"></span>
     </div>
-
     <div class="section">
-      <div class="section-title"><span class="section-icon">⚠</span> Risks &amp; Weaknesses</div>
+      <div class="section-title">Risks &amp; Weaknesses</div>
       <div id="risks-list"></div>
     </div>
-
     <div class="section">
-      <div class="section-title"><span class="section-icon">◈</span> Hidden Assumptions</div>
+      <div class="section-title">Hidden Assumptions</div>
       <div id="assumptions-list"></div>
     </div>
-
     <div class="section">
-      <div class="section-title"><span class="section-icon">?</span> Skeptic's Questions</div>
+      <div class="section-title">Skeptic's Questions</div>
       <div id="questions-list"></div>
     </div>
-
     <div class="section">
-      <div class="section-title"><span class="section-icon">◇</span> What Would Have to Be True</div>
+      <div class="section-title">What Would Have to Be True</div>
       <div id="wwtbt-list"></div>
     </div>
-
     <div class="section">
-      <div class="section-title"><span class="section-icon">◉</span> Bottom Line</div>
+      <div class="section-title">Bottom Line</div>
       <div class="summary-box" id="summary-box"></div>
     </div>
-
-    <button class="btn-reset" onclick="reset()">← Validate another idea</button>
+    <button class="btn-reset" onclick="reset()">&larr; Validate another idea</button>
   </div>
 
 </div>
 
 <script>
+  // =====================================================
+  // PASTE YOUR ANTHROPIC API KEY BETWEEN THE QUOTES BELOW
+  // =====================================================
+  var ANTHROPIC_API_KEY = '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';
+  // =====================================================
+
   function updateCharCount() {
-    const n = document.getElementById('idea-input').value.length;
+    var n = document.getElementById('idea-input').value.length;
     document.getElementById('char-count').textContent = n + ' characters';
   }
 
@@ -370,7 +222,7 @@
   }
 
   function showError(msg) {
-    const el = document.getElementById('error-box');
+    var el = document.getElementById('error-box');
     el.textContent = msg;
     el.classList.add('visible');
   }
@@ -380,93 +232,83 @@
   }
 
   function renderList(containerId, items, itemClass, markerSymbol) {
-    const el = document.getElementById(containerId);
-    el.innerHTML = items.map(text => `
-      <div class="item ${itemClass}">
-        <span class="item-marker">${markerSymbol}</span>
-        <span>${text}</span>
-      </div>
-    `).join('');
+    var el = document.getElementById(containerId);
+    el.innerHTML = items.map(function(text) {
+      return '<div class="item ' + itemClass + '"><span class="item-marker">' + markerSymbol + '</span><span>' + text + '</span></div>';
+    }).join('');
   }
 
   async function validate() {
-    const idea = document.getElementById('idea-input').value.trim();
+    var idea = document.getElementById('idea-input').value.trim();
     if (!idea) { showError('Please describe your idea first.'); return; }
     if (idea.length < 20) { showError('Tell me a bit more about your idea.'); return; }
+    if (ANTHROPIC_API_KEY === 'YOUR_API_KEY_HERE') {
+      showError('Please add your Anthropic API key to the index.html file first.');
+      return;
+    }
 
     hideError();
     setLoading(true);
     document.getElementById('results').classList.remove('visible');
 
-    const systemPrompt = `You are a sharp, experienced product critic — think a seasoned VC partner mixed with a demanding customer. You give structured devil's advocate feedback on product ideas. Be genuinely critical, not encouraging. Identify real problems.
+    var systemPrompt = 'You are a sharp, experienced product critic. Give structured devil\'s advocate feedback on product ideas. Be genuinely critical. Respond ONLY with valid JSON in exactly this structure, no other text: { "verdict": "Risky" or "Promising" or "Needs Work", "risks": ["...", "...", "..."], "assumptions": ["...", "...", "..."], "questions": ["...", "...", "..."], "wwtbt": ["...", "...", "..."], "summary": "2-3 sentence bottom line." } risks: 3-5 real weaknesses. assumptions: 3-4 unstated assumptions. questions: 3-4 skeptical investor questions. wwtbt: 3-4 things that would have to be true for success. Return ONLY the JSON object, nothing else.';
 
-Respond ONLY with valid JSON in exactly this structure:
-{
-  "verdict": "Risky" | "Promising" | "Needs Work",
-  "risks": ["...", "...", "..."],
-  "assumptions": ["...", "...", "..."],
-  "questions": ["...", "...", "..."],
-  "wwtbt": ["...", "...", "..."],
-  "summary": "2-3 sentence bottom line assessment."
-}
+    try {
+      var response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': ANTHROPIC_API_KEY,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: systemPrompt,
+          messages: [{ role: 'user', content: 'Validate this idea: ' + idea }]
+        })
+      });
 
-risks: 3-5 real weaknesses or failure modes
-assumptions: 3-4 unstated things the founder is assuming are true
-questions: 3-4 questions a skeptical investor or user would ask
-wwtbt: 3-4 "What would have to be true for this to succeed" statements
-summary: honest overall verdict
+      if (!response.ok) {
+        var errData = await response.json();
+        var errMsg = (errData && errData.error && errData.error.message) ? errData.error.message : 'HTTP ' + response.status;
+        throw new Error(errMsg);
+      }
 
-Return ONLY the JSON object, no other text.`;
+      var data = await response.json();
+      console.log('API response:', data);
 
-      try {
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': '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',
-            'anthropic-version': '2023-06-01',
-            'anthropic-dangerous-direct-browser-access': 'true'
-          },
-          body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
-            max_tokens: 1000,
-            system: systemPrompt,
-            messages: [{ role: 'user', content: `Validate this idea: ${idea}` }]
-          })
-        });
-      
-        if (!response.ok) {
-          const errData = await response.json();
-          throw new Error(`API error ${response.status}: ${errData?.error?.message || 'unknown'}`);
+      var text = '';
+      if (data.content && data.content.length > 0) {
+        for (var i = 0; i < data.content.length; i++) {
+          if (data.content[i].text) { text += data.content[i].text; }
         }
-      
-        const data = await response.json();
-        console.log('API response:', data); // helpful for debugging
-        const text = data.content?.map(b => b.text || '').join('') || '';
-        if (!text) throw new Error('Empty response from API');
-        
-        const clean = text.replace(/```json|```/g, '').trim();
-        const parsed = JSON.parse(clean);
+      }
 
-      // Render
-      const badge = document.getElementById('verdict-badge');
+      if (!text) { throw new Error('Empty response from API'); }
+
+      var clean = text.replace(/```json/g, '').replace(/```/g, '').trim();
+      var parsed = JSON.parse(clean);
+
+      var badge = document.getElementById('verdict-badge');
       badge.textContent = parsed.verdict;
       badge.className = 'verdict-badge';
-      if (parsed.verdict === 'Risky') badge.classList.add('risky');
-      if (parsed.verdict === 'Promising') badge.classList.add('promising');
+      if (parsed.verdict === 'Risky') { badge.classList.add('risky'); }
+      if (parsed.verdict === 'Promising') { badge.classList.add('promising'); }
 
-      renderList('risks-list', parsed.risks, 'risk-item', '✕');
-      renderList('assumptions-list', parsed.assumptions, 'assumption-item', '→');
-      renderList('questions-list', parsed.questions, 'question-item', '–');
-      renderList('wwtbt-list', parsed.wwtbt, 'wwtbt-item', '◇');
+      renderList('risks-list', parsed.risks, 'risk-item', 'x');
+      renderList('assumptions-list', parsed.assumptions, 'assumption-item', '>');
+      renderList('questions-list', parsed.questions, 'question-item', '-');
+      renderList('wwtbt-list', parsed.wwtbt, 'wwtbt-item', 'o');
       document.getElementById('summary-box').textContent = parsed.summary;
 
       document.getElementById('results').classList.add('visible');
       document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     } catch (err) {
-      showError('Something went wrong calling the API. Check your browser console for details. Error: ' + err.message);
-      console.error(err);
+      showError('Error: ' + err.message + ' — check the browser console (F12) for details.');
+      console.error('Full error:', err);
     } finally {
       setLoading(false);
     }
@@ -480,9 +322,8 @@ Return ONLY the JSON object, no other text.`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Allow Ctrl+Enter to submit
-  document.addEventListener('keydown', e => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') validate();
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { validate(); }
   });
 </script>
 </body>
